@@ -1,9 +1,10 @@
 const axios = require("axios");
 const { expect } = require("chai");
+const jsonData = require("../../config/env.json");
 
 describe("GET API Request Test", async () => {
     
-    const response = axios.get("https://jsonplaceholder.typicode.com/users");
+    const response = axios.get(`${jsonData.baseUrl}/users`);
 
     it("should have status code 200", async () => {
         const res = await response;
